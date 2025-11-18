@@ -1,0 +1,78 @@
+<!-- Content for adding or editing a habit -->
+<div class="container">
+  <div class="row">
+    <div class="offset-md-3 col-md-6">
+
+      <h1><%= title %></h1>
+
+      <form class="form" method="post">
+
+        <div class="form-group mb-3">
+          <label for="titleTextField">Habit Title</label>
+          <input type="text"
+                 class="form-control"
+                 id="titleTextField"
+                 placeholder="Enter the habit name"
+                 name="title"
+                 value="<%= Habit ? Habit.title : '' %>"
+                 required>
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="difficultyField">Difficulty</label>
+          <select class="form-control"
+                  id="difficultyField"
+                  name="difficulty"
+                  required>
+            <option value="" disabled selected>Select difficulty</option>
+            <option value="Easy"   <%= Habit && Habit.difficulty === 'Easy' ? 'selected' : '' %>>Easy</option>
+            <option value="Medium" <%= Habit && Habit.difficulty === 'Medium' ? 'selected' : '' %>>Medium</option>
+            <option value="Hard"   <%= Habit && Habit.difficulty === 'Hard' ? 'selected' : '' %>>Hard</option>
+          </select>
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="frequencyField">Frequency</label>
+          <select class="form-control"
+                  id="frequencyField"
+                  name="frequency"
+                  required>
+            <option value="" disabled selected>Select frequency</option>
+            <option value="Daily"  <%= Habit && Habit.frequency === 'Daily' ? 'selected' : '' %>>Daily</option>
+            <option value="Weekly" <%= Habit && Habit.frequency === 'Weekly' ? 'selected' : '' %>>Weekly</option>
+          </select>
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="purposeTextField">Purpose</label>
+          <input type="text"
+                 class="form-control"
+                 id="purposeTextField"
+                 placeholder="Why are you building this habit?"
+                 name="purpose"
+                 value="<%= Habit ? Habit.purpose : '' %>"
+                 required>
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="notesTextField">Notes (Optional)</label>
+          <textarea class="form-control"
+                    id="notesTextField"
+                    placeholder="Add any extra notes..."
+                    name="notes"
+                    rows="3"><%= Habit ? Habit.notes : '' %></textarea>
+        </div>
+
+        <button class="btn btn-primary" type="submit">
+          <i class="fas fa-save"></i> Submit
+        </button>
+
+        <a href="/habits" class="btn btn-warning">
+          <i class="fas fa-undo"></i> Cancel
+        </a>
+
+      </form>
+
+    </div>
+  </div>
+</div>
