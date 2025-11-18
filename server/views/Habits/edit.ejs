@@ -4,7 +4,7 @@
     <div class="offset-md-3 col-md-6">
 
       <h1><%= title %></h1>
-
+            <!-- Field for user to edit habit name-->
       <form class="form" method="post">
 
         <div class="form-group mb-3">
@@ -17,7 +17,7 @@
                  value="<%= Habit ? Habit.title : '' %>"
                  required>
         </div>
-
+         <!-- Field for user to edit habit difficulty-->
         <div class="form-group mb-3">
           <label for="difficultyField">Difficulty</label>
           <select class="form-control"
@@ -25,9 +25,9 @@
                   name="difficulty"
                   required>
             <option value="" disabled selected>Select difficulty</option>
-            <option value="Easy"   <%= Habit && Habit.difficulty === 'Easy' ? 'selected' : '' %>>Easy</option>
-            <option value="Medium" <%= Habit && Habit.difficulty === 'Medium' ? 'selected' : '' %>>Medium</option>
-            <option value="Hard"   <%= Habit && Habit.difficulty === 'Hard' ? 'selected' : '' %>>Hard</option>
+            <option value="Easy"   <%= Habit && Habit.difficulty === 'Easy' ? 'selected' : '' %>>🟢Easy</option>
+            <option value="Medium" <%= Habit && Habit.difficulty === 'Medium' ? 'selected' : '' %>>🟡Medium</option>
+            <option value="Hard"   <%= Habit && Habit.difficulty === 'Hard' ? 'selected' : '' %>>🔴Hard</option>
           </select>
         </div>
 
@@ -40,6 +40,7 @@
             <option value="" disabled selected>Select frequency</option>
             <option value="Daily"  <%= Habit && Habit.frequency === 'Daily' ? 'selected' : '' %>>Daily</option>
             <option value="Weekly" <%= Habit && Habit.frequency === 'Weekly' ? 'selected' : '' %>>Weekly</option>
+            <option value="Monthly" <%= Habit && Habit.frequency === 'Monthly' ? 'selected' : '' %>>Monthly</option>
           </select>
         </div>
 
@@ -58,7 +59,7 @@
           <label for="notesTextField">Notes (Optional)</label>
           <textarea class="form-control"
                     id="notesTextField"
-                    placeholder="Add any extra notes..."
+                    placeholder="Add any extra notes"
                     name="notes"
                     rows="3"><%= Habit ? Habit.notes : '' %></textarea>
         </div>

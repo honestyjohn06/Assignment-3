@@ -1,6 +1,6 @@
 let mongoose = require("mongoose");
 
-// Create a model
+// Create habit model to be used on add a habit page
 let habitModel = mongoose.Schema(
   {
     title: String,

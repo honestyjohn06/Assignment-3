@@ -60,8 +60,9 @@
     <div class="row">
       <div class="offset-md-3 col-md-6">
         <div class="form-container">
+        <!-- Field for user to add habit name-->
           <h1><i class="fas fa-plus-circle"></i> Add New Habit</h1>
-
+            
           <form class="form" method="post">
 
             <div class="form-group mb-4">
@@ -74,7 +75,7 @@
                      value=""
                      required>
             </div>
-
+                <!-- Field for user to select habit difficulty-->
             <div class="form-group mb-4">
               <label for="difficultyField"><i class="fas fa-signal"></i> Difficulty</label>
               <select class="form-control form-select"
@@ -87,7 +88,7 @@
                 <option value="Hard">🔴 Hard</option>
               </select>
             </div>
-
+                <!-- Field for user to select habit frequency name-->
             <div class="form-group mb-4">
               <label for="frequencyField"><i class="fas fa-calendar-alt"></i> Frequency</label>
               <select class="form-control form-select"
@@ -100,7 +101,7 @@
                 <option value="Weekly">Monthly</option>
               </select>
             </div>
-
+                <!-- Field for user to add purpose for habit-->
             <div class="form-group mb-4">
               <label for="purposeTextField"><i class="fas fa-bullseye"></i> Purpose</label>
               <input type="text"
@@ -111,7 +112,7 @@
                      value=""
                      required>
             </div>
-
+                <!-- Field for user to add extra notes-->
             <div class="form-group mb-4">
               <label for="notesTextField"><i class="fas fa-sticky-note"></i> Notes (Optional)</label>
               <textarea class="form-control"
@@ -120,12 +121,12 @@
                         name="notes"
                         rows="4"></textarea>
             </div>
-
+                <!-- Button for user to sumbit habit-->
             <div class="btn-container">
               <button class="btn btn-primary" type="submit">
                 <i class="fas fa-save"></i> Save Habit
               </button>
-
+            <!-- Button for user to cancel added habit-->
               <a href="/habits" class="btn btn-warning">
                 <i class="fas fa-times"></i> Cancel
               </a>
